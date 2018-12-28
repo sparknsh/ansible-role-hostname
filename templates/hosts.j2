@@ -1,0 +1,31 @@
+# {{ ansible_managed }}
+
+{% if ansible_os_family == "Debian" %}
+127.0.1.1	localhost
+127.0.1.1	{{ hostname_hostname }}{% if hostname_hostname != hostname_hostname_short %}  {{ hostname_hostname_short }}{% endif %}
+
+
+# The following lines are desirable for IPv6 capable hosts
+::1        localhost ip6-localhost ip6-loopback
+::1        {{ hostname_hostname }}{% if hostname_hostname != hostname_hostname_short %}  {{ hostname_hostname_short }}{% endif %}
+
+ff02::1    ip6-allnodes
+ff02::2    ip6-allrouters
+{% elif ansible_os_family == "RedHat" %}
+127.0.0.1	localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1			localhost localhost.localdomain localhost6 localhost6.localdomain6
+127.0.1.1	{{ hostname_hostname }}{% if hostname_hostname != hostname_hostname_short %}  {{ hostname_hostname_short }}{% endif %}
+::1			{{ hostname_hostname }}{% if hostname_hostname != hostname_hostname_short %}  {{ hostname_hostname_short }}{% endif %}
+
+{% else %}
+127.0.1.1	{{ hostname_hostname }}{% if hostname_hostname != hostname_hostname_short %}  {{ hostname_hostname_short }}{% endif %}
+::1			{{ hostname_hostname }}{% if hostname_hostname != hostname_hostname_short %}  {{ hostname_hostname_short }}{% endif %}
+
+{% endif %}
+{% if hostname_hosts | length >= 1 %}
+
+# Custom host records
+{% for host, ip in hostname_hosts.items() | sort() %}
+{{ ip }}	{{ host }}
+{% endfor %}
+{% endif %}

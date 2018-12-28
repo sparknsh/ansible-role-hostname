@@ -1,0 +1,13 @@
+---
+
+- name: "Update hostname"
+  hostname:
+    name: "{{ hostname_hostname }}"
+
+- name: "Update Hosts File"
+  template:
+    src: "hosts.j2"
+    dest: "/etc/hosts"
+    owner: root
+    group: root
+    mode: 0644
