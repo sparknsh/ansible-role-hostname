@@ -1,13 +1,13 @@
 ---
 
-- name: "Update hostname"
+- name: Hostname | Update FQDN hostname
   hostname:
-    name: "{{ hostname_hostname }}"
+    name: "{{ hostname__fqdn }}"
 
-- name: "Update Hosts File"
+- name: Hostname | Update hosts File
   template:
-    src: "hosts.j2"
-    dest: "/etc/hosts"
+    src: hosts.j2
+    dest: "{{ hostname__host_file }}"
     owner: root
     group: root
     mode: 0644

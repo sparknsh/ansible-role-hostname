@@ -1,6 +1,6 @@
 # Ansible Role: Hostname
 
-#### Version: 1.0.0
+#### Version: 1.0.1
 
 [![](https://img.shields.io/badge/role-sparknsh.hostname-blue.svg)](https://galaxy.ansible.com/sparknsh/hostname)
 
@@ -9,15 +9,15 @@ Development of this project is managed in a private repository then pushed out t
 ## Role Variables
 
 ```yaml
-hostname_hostname: "{{ inventory_hostname }}"
-hostname_hosts: []
+hostname__fqdn: "{{ inventory_hostname }}"
+hostname__hosts: []
 ```
 
 #### Example
 
 ```yaml
-hostname_hostname: "{{ inventory_hostname }}"
-hostname_hosts:
+hostname__fqdn: "{{ inventory_hostname }}"
+hostname__hosts:
   myhost.com: 192.168.1.1
   yourhost.com: 192.168.1.2
 ```
@@ -38,4 +38,4 @@ MIT
 
 ## Author Information
 
-This role was created in 2018 by [sparknsh](https://www.sparknsh.com) at [Rebel Media, Inc.](https://www.rebelmedia.io/)
+This role was created in 2019 by [sparknsh](https://www.sparknsh.com) at [Rebel Media, Inc.](https://www.rebelmedia.io/)

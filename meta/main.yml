@@ -25,6 +25,7 @@ galaxy_info:
     - system
     - development
     - cloud
+    - hosts
     - hostname
 
 dependencies: []
