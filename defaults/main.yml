@@ -1,4 +1,4 @@
 ---
 
-hostname__fqdn: "{{ ansible_hostname }}"
+hostname__fqdn: "{{ ansible_fqdn }}"
 hostname__hosts: []

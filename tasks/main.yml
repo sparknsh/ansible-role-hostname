@@ -3,6 +3,7 @@
 - name: Hostname | Update FQDN hostname
   hostname:
     name: "{{ hostname__fqdn }}"
+  notify: Regather Facts
 
 - name: Hostname | Update hosts File
   template:
@@ -11,3 +12,7 @@
     owner: root
     group: root
     mode: 0644
+  notify: Regather Facts
+
+- name: Hostname | Flush Handlers
+  meta: flush_handlers

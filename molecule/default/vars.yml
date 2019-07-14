@@ -1,6 +1,6 @@
 ---
 
-hostname__fqdn: "{{ ansible_hostname }}"
+hostname__fqdn: "{{ ansible_fqdn}}"
 hostname__hosts:
   google.com: 127.0.0.1
   facebook.com: 127.0.0.1
