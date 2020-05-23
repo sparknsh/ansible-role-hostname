@@ -1,6 +1,6 @@
 # Ansible Role: Hostname
 
-#### Version: 1.0.2
+#### Version: 1.0.3
 
 [![](https://img.shields.io/badge/role-sparknsh.hostname-blue.svg)](https://galaxy.ansible.com/sparknsh/hostname)
 
@@ -38,4 +38,4 @@ MIT
 
 ## Author Information
 
-This role was created in 2019 by [sparknsh](https://www.sparknsh.com) at [Rebel Media, Inc.](https://www.rebelmedia.io/)
+This role was created in 2020 by [sparknsh](https://www.sparknsh.com) at [Rebel Media, Inc.](https://www.rebelmedia.io/)
